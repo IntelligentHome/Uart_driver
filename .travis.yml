@@ -4,13 +4,13 @@ language:
 before_install:
     - sudo apt-get update -qq
     - git clone https://github.com/IntelligentHome/External.git ../External
-    - cd ../External
+    - pushd ../External
     - git submodule update --init --remote --recursive
     - 'if [ "${TRAVIS_BRANCH}"="develop" ]; then
         git checkout -b develop origin/develop;
         git status;
       fi'
-    - cd ../Nrf24l01_driver
+    - popd
     - echo ${TRAVIS_BRANCH}
 
 install:
