@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Uart_driver)
 
 set(MCU atmega8)
-set(FCPU 8000000UL)
+set(FCPU 7372800UL)
 
 find_program(AVR_AR avr-ar)
 find_program(AVR_RANLIB avr-ranlib)
