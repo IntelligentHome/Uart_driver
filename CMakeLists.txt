@@ -6,10 +6,20 @@ project(Uart_driver)
 
 include (../External/PlatformDependency.cmake)
 
-set(SOURCES
+set (SOURCES
     Uart_driver.cpp
-    UartAvr.cpp
     )
+
+if (${_TARGET_PLATFORM} STREQUAL "AVR")
+
+    set (SOURCES
+        ${SOURCES}
+        UartAvr.cpp
+        )
+
+elseif (${_TARGET_PLATFORM} STREQUAL "RASPBERRYPI")
+
+endif()
 
 include_directories(
     ../External/include/
