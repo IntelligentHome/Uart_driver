@@ -23,7 +23,6 @@ UartAvr::UartAvr(uart_driver::Baud baud) {
     UCSRC = (1<<URSEL) | (1<<UCSZ1) | (1<<UCSZ0);
     //TODO: Disable interrupts (for tests)
     UCSRB = (1<<TXEN) | (1<<RXEN);// | (1<<RXCIE);
-    PORTC |= (1<<2);
 }
 
 void UartAvr::Send(uint8_t send_buff[], uint16_t size) {
